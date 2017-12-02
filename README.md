@@ -1,6 +1,8 @@
 # ionic-3-wordpress-client
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
+`Update site_url property in the environment.ts file, default is http://localhost/crud/server_wordpress`
+
 ## How to use this template
 
 *This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
