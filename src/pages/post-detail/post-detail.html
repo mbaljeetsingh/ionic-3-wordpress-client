@@ -14,17 +14,42 @@
 
 
 <ion-content padding>
-  <ion-card>
 
-    <img src="http://via.placeholder.com/350x150"/>
-    <ion-card-content>
-      <ion-card-title>
-        {{post.title.rendered}}
-      </ion-card-title>
-      <p [innerHtml]="post.content.rendered"></p>
-      <!--Categories: {{post.categories}}-->
-      <!--Tags: {{post.tags}}-->
-    </ion-card-content>
+  <div padding>
+    <ion-segment [(ngModel)]="post_comment">
+      <ion-segment-button value="post">
+        Post
+      </ion-segment-button>
+      <ion-segment-button value="comments">
+        Comments
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 
-  </ion-card>
+  <div [ngSwitch]="post_comment">
+    <div *ngSwitchCase="'post'">
+      <ion-card>
+
+        <img src="http://via.placeholder.com/350x150"/>
+        <ion-card-content>
+          <ion-card-title>
+            {{post.title.rendered}}
+          </ion-card-title>
+          <p [innerHtml]="post.content.rendered"></p>
+          <!--Categories: {{post.categories}}-->
+          <!--Tags: {{post.tags}}-->
+        </ion-card-content>
+
+      </ion-card>
+    </div>
+    <div *ngSwitchCase="'comments'">
+      <p *ngIf="!comments.length">No Comments Avaialbe...</p>
+      <ion-card *ngFor="let comment of comments">
+        <ion-card-content>
+          <p [innerHtml]="comment.content.rendered"></p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </div>
 </ion-content>

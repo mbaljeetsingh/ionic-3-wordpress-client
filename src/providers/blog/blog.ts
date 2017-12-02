@@ -28,7 +28,11 @@ export class BlogProvider {
       return this.http.get(`${this.api_url}/posts?categories=${category.id}`);
   }
 
-    searchPosts(value) {
-        return this.http.get(`${this.api_url}/posts?search=${value}`);
-    }
+  searchPosts(value) {
+      return this.http.get(`${this.api_url}/posts?search=${value}`);
+  }
+
+  getPostComments(id){
+      return this.http.get(`${this.api_url}/comments?post=${id}`);
+  }
 }
