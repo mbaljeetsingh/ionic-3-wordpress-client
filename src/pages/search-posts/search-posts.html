@@ -1,5 +1,5 @@
 <!--
-  Generated template for the PostsPage page.
+  Generated template for the SearchPostsPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -10,17 +10,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>All Posts</ion-title>
-    <ion-buttons right>
-      <button ion-button icon-only (click)="onGoToSearchPosts()"><ion-icon name="search"></ion-icon></button>
-    </ion-buttons>
+    <ion-title>Search Posts</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-searchbar (ionInput)="getPosts($event)"></ion-searchbar>
   <ion-card  *ngFor="let post of posts" (click)="onSelectPost(post)">
     <img src="http://via.placeholder.com/350x150"/>
     <ion-card-content>
@@ -28,9 +25,6 @@
         {{post.title.rendered}}
       </ion-card-title>
       <p [innerHtml]="post.excerpt.rendered"></p>
-      <!--Categories: {{post.categories}}-->
-      <!--Tags: {{post.tags}}-->
     </ion-card-content>
   </ion-card>
-
 </ion-content>

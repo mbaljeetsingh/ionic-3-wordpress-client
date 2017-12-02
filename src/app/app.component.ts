@@ -18,7 +18,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Posts', page: 'PostsPage' },
+      { title: 'Search Posts', page: 'SearchPostsPage' },
+      { title: 'All Posts', page: 'PostsPage' },
       { title: 'Categories', page: 'CategoriesPage' }
     ];
 

@@ -27,4 +27,8 @@ export class BlogProvider {
   getCategoryPosts(category: any) {
       return this.http.get(`${this.api_url}/posts?categories=${category.id}`);
   }
+
+    searchPosts(value) {
+        return this.http.get(`${this.api_url}/posts?search=${value}`);
+    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {BlogProvider} from '../../providers/blog/blog';
 
 /**
@@ -32,6 +32,7 @@ export class PostsPage {
       this.navCtrl.push('PostDetailPage', {post: post});
   }
 
-
-
+  onGoToSearchPosts() {
+      this.navCtrl.setRoot('SearchPostsPage');
+  }
 }
