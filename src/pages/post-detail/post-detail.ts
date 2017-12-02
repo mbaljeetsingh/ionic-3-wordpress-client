@@ -17,7 +17,6 @@ export class PostDetailPage {
   post;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log();
     this.post = this.navParams.get('post');
   }
 

@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>category</ion-title>
+    <ion-title>{{category.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card  *ngFor="let post of posts" (click)="onSelectPost(post)">
+    <img src="http://via.placeholder.com/350x150"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{post.title.rendered}}
+      </ion-card-title>
+      <p [innerHtml]="post.excerpt.rendered"></p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

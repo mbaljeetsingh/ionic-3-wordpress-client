@@ -27,4 +27,7 @@ export class CategoriesPage {
     console.log('ionViewDidLoad CategoriesPage');
   }
 
+    onSelectCategory(category) {
+        this.navCtrl.push('CategoryPage', {category: category});
+    }
 }
